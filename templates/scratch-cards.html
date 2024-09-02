@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Scratch Cards - PataPesa{% endblock %}
+
+{% block meta_description %}Try your luck with scratch cards on PataPesa and win exciting rewards!{% endblock %}
+
+{% block content %}
+<section class="scratch-cards-section">
+  <div class="container">
+    <h1>Scratch Cards</h1>
+    <p>Try your luck with scratch cards to win various rewards. Scratch and reveal your prize!</p>
+    <a href="/play-scratch-cards" class="btn-action">Play Scratch Cards</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Scratch Cards page */
+  .scratch-cards-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .btn-action {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-action:hover {
+    background-color: #0056b3;
+  }
+</style>
+{% endblock %}

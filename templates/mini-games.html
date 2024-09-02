@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Mini Games - PataPesa{% endblock %}
+
+{% block meta_description %}Play exciting mini games on PataPesa and earn rewards. Discover our range of fun games!{% endblock %}
+
+{% block content %}
+<section class="mini-games-section">
+  <div class="container">
+    <h1>Mini Games</h1>
+    <p>Explore our collection of mini games and earn rewards as you play. Choose your game and start having fun!</p>
+    <a href="/play-mini-games" class="btn-action">Play Mini Games</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Mini Games page */
+  .mini-games-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .btn-action {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-action:hover {
+    background-color: #0056b3;
+  }
+</style>
+{% endblock %}

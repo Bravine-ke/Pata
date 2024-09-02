@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}Surveys - PataPesa{% endblock %}
+
+{% block meta_description %}Participate in surveys on PataPesa to share your opinions and earn rewards!{% endblock %}
+
+{% block content %}
+<section class="surveys-section">
+  <div class="container">
+    <h1>Surveys</h1>
+    <p>Share your opinions and earn rewards by participating in our surveys!</p>
+    <form id="survey-form" method="post" action="/submit-survey">
+      <div class="survey-question">
+        <h2>Question 1: How satisfied are you with our service?</h2>
+        <label>
+          <input type="radio" name="satisfaction" value="Very Satisfied" required>
+          Very Satisfied
+        </label><br>
+        <label>
+          <input type="radio" name="satisfaction" value="Satisfied">
+          Satisfied
+        </label><br>
+        <label>
+          <input type="radio" name="satisfaction" value="Neutral">
+          Neutral
+        </label><br>
+        <label>
+          <input type="radio" name="satisfaction" value="Dissatisfied">
+          Dissatisfied
+        </label><br>
+        <label>
+          <input type="radio" name="satisfaction" value="Very Dissatisfied">
+          Very Dissatisfied
+        </label>
+      </div>
+
+      <div class="survey-question">
+        <h2>Question 2: What features would you like to see in the future?</h2>
+        <textarea name="features" rows="4" placeholder="Share your ideas here..." required></textarea>
+      </div>
+
+      <!-- Add more questions as needed -->
+
+      <button type="submit" class="btn-submit">Submit Survey</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Surveys page */
+  .surveys-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .survey-question {
+    margin-bottom: 1.5rem;
+  }
+  textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  .btn-submit {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-submit:hover {
+    background-color: #0056b3;
+  }
+</style>
+{% endblock %}

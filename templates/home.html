@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home - PataPesa
+{% endblock %}
+
+{% block meta_description %}
+PataPesa is your go-to platform for earning money online through fun activities like spinning the wheel, trivia quizzes, surveys, and more!
+{% endblock %}
+
+{% block content %}
+<section class="hero-section" style="background-image: url('{{ url_for('static', filename='images/my1-bg.gif') }}');">
+  <div class="container">
+    <div class="hero-content text-center">
+      <h1> <h1>
+        <span>W</span>
+        <span>e</span>
+        <span>l</span>
+        <span>c</span>
+        <span>o</span>
+        <span>m</span>
+        <span>e</span>
+        <span> </span>
+        <span>t</span>
+        <span>o</span>
+        <span> </span>
+        <span>P</span>
+        <span>a</span>
+        <span>t</span>
+        <span>a</span>
+        <span>P</span>
+        <span>e</span>
+        <span>s</span>
+        <span>a</span>
+    </h1></h1>
+      <p>Earn money online with fun and easy tasks!</p>
+      <a href="/signup" class="btn btn-primary">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/spin-bg1.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <h3>Spin the Wheel</h3>
+          <p>Spin and win cash rewards instantly!</p>
+          <a href="/spin-the-wheel" class="btn btn-secondary" style="background-color: #444; color: #fff; padding: 12px 20px; border-radius: 5px; text-decoration: none; transition: background-color 0.3s, transform 0.3s;">Play Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/trivia-bg.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-question-circle"></i>
+          </div>
+          <h3>Trivia Quiz</h3>
+          <p>Answer trivia questions to earn money.</p>
+          <a href="/trivia" class="btn btn-secondary">Start Quiz</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/survey-bg.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-list-alt"></i>
+          </div>
+          <h3>Complete Surveys</h3>
+          <p>Participate in surveys and get paid.</p>
+          <a href="/surveys" class="btn btn-secondary">Take Survey</a>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/daily-rewards-bg.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-calendar-day"></i>
+          </div>
+          <h3>Daily Rewards</h3>
+          <p>Claim your daily reward every day!</p>
+          <a href="/daily-rewards" class="btn btn-secondary">Claim Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/scratch-bg1.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-gift"></i>
+          </div>
+          <h3>Scratch Cards</h3>
+          <p>Scratch and win cash prizes!</p>
+          <a href="/scratch-cards" class="btn btn-secondary">Scratch Now</a>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box text-center" style="background-image: url('{{ url_for('static', filename='images/mini-bg.jpg') }}'); background-size: cover; background-position: center; padding: 10px; border-radius: 8px; color: #fff; position: relative;">
+          <div class="feature-icon" style="font-size: 4rem; color: #f0c419; margin-bottom: 15px;">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3>Mini Games</h3>
+          <p>Play mini games and earn money.</p>
+          <a href="/mini-games" class="btn btn-secondary">Play Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leaderboard-section" style="background-image: url('{{ url_for('static', filename='images/leaderboard-bg.jpg') }}'); background-size: cover; background-position: center; padding: 60px 0; color: #fff;">
+  <div class="container text-center">
+    <h2>Leaderboard</h2>
+    <p>Check out the top earners of the week!</p>
+    <a href="/leaderboard" class="btn btn-primary">View Leaderboard</a>
+  </div>
+</section>
+
+
+<section class="referral-section" style="background-image: url('{{ url_for('static', filename='images/refer-bg.jpg') }}'); background-size: cover; background-position: center; padding: 60px 0;">
+  <div class="container text-center" style="background: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 8px;">
+    <h2 style="color: #fff;">Referral Program</h2>
+    <p style="color: #fff;">Invite friends and earn extra cash!</p>
+    <a href="/referral-program" class="btn btn-primary" style="background-color: #f0c419; color: #000;">Refer Now</a>
+  </div>
+</section>
+
+{% endblock %}

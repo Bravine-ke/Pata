@@ -1,0 +1,537 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Dark background for a modern look */
+    color: #e0e0e0; /* Light text color for readability on dark background */
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+ .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none; /* Initially hidden */
+        }
+    
+#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  background-size: cover;
+}
+
+
+/* Optional: Add a dark overlay to the video */
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  z-index: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #000;
+    padding: 10px 20px; /* Adjust padding if needed */
+    display: flex;
+    justify-content: center; /* Center header content */
+    align-items: center;
+    position: fixed; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure header is above other content */
+    height: 150px; /* Set a fixed height for the header */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for header content */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.logo img {
+    width: 150px; /* Logo size */
+    height: auto;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex: 1; /* Takes up available space */
+    justify-content: space-between; /* Space between nav-links and auth-links */
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.nav-links {
+    margin-right: 50px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Space between items */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #f0c419;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #222;
+    min-width: 180px;
+    display: none;
+    z-index: 999;
+    list-style: none;
+    padding: 10px 0;
+}
+
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+
+.dropdown-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0c419;
+    color: #000;
+}
+
+.auth-links {
+    display: flex-end;
+    align-items: center;
+    gap: 20px; /* Space between items */
+    margin-left: 250px; /* Move to the right */
+}
+
+.auth-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px; /* Adjust padding */
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-login {
+    background-color: #444;
+    color: white;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background-color: #333;
+    transform: scale(1.05); /* Slightly scale on hover */
+}
+
+.btn-signup {
+    background-color: #f0c419;
+    color: #000;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn-signup:hover {
+    background-color: #e0b218;
+    transform: scale(1.05); /* Slightly scale on hover */
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 25px 0; /* Padding for hero section */
+    text-align: center;
+    margin-top: 70px; /* Ensure the content is not hidden under the fixed header */
+}
+
+/* Centering the hero content */
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Align text vertically centered */
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    height: calc(100vh - 60px); /* Adjust height considering header height */
+    text-align: center; /* Center text horizontally */
+}
+
+/* Styling for the heading */
+.hero-content h1 {
+    font-size: 2.8rem; /* Larger heading */
+    font-weight: 900; /* Very bold text */
+    color: #fff; /* Black color for high contrast and visibility */
+    margin: 0; /* Remove default margin */
+    text-transform: uppercase; /* Makes the text all uppercase for a professional look */
+    letter-spacing: 0.5rem; /* Adjust letter spacing to make gaps visible */
+    display: flex; /* Ensure spans are in a row */
+    flex-wrap: wrap; /* Allow text to wrap to next line if necessary */
+    justify-content: center; /* Center the text horizontally */
+}
+
+/* Styling for individual letters */
+.hero-content h1 span {
+    display: inline-block; /* Allows scaling of individual letters */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for scaling and color */
+    position: relative; /* Needed for pseudo-element positioning */
+    margin: 0 0.1rem; /* Small margin to ensure gaps between letters */
+}
+
+/* Hover effect for individual letters */
+.hero-content h1 span:hover {
+    transform: scale(2); /* Expands to twice the size */
+    color: #f0c419; /* Color change on hover, adjust as needed */
+}
+
+/* Hover effect background */
+.hero-content h1 span::before {
+    content: ''; /* Clear content */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none; /* Background color for hover effect */
+    z-index: -1; /* Places background behind the text */
+    transition: opacity 0.3s ease; /* Smooth transition for background */
+}
+
+/* Background effect on hover */
+.hero-content h1 span:hover::before {
+    opacity: 0.5; /* Change background opacity on hover */
+}
+
+
+
+.hero-content p {
+    font-size: 1.5rem; /* Larger paragraph text */
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #f0c419;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e0b218;
+}
+
+/* Features Section */
+.features-section {
+    color: white;
+    padding: 60px 0;
+    background-color: #1e1e1e; /* Slightly lighter dark background */
+}
+
+.feature-box {
+    background: #333;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s;
+}
+
+.feature-box i {
+    font-size: 2.5rem; /* Larger icons */
+    color: #f0c419;
+    margin-bottom: 15px;
+}
+
+.feature-box h3 {
+    margin: 10px 0;
+    font-size: 1.8rem; /* Larger heading */
+    color: #fff; /* White color for the heading text */
+}
+
+.feature-box p {
+    margin-bottom: 20px;
+}
+
+.feature-box .btn-secondary {
+    background-color: #444;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.feature-box .btn-secondary:hover {
+    background-color: #333;
+}
+
+/* Leaderboard and Referral Sections */
+.leaderboard-section,
+.referral-section {
+    padding: 60px 0;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.leaderboard-section h2,
+.referral-section h2 {
+    font-size: 2.2rem; /* Larger heading */
+    margin-bottom: 20px;
+}
+
+.leaderboard-section p,
+.referral-section p {
+    margin-bottom: 30px;
+    font-size: 1.4rem; /* Larger paragraph text */
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.footer-content li {
+    margin-bottom: 10px;
+}
+
+.footer-content a {
+    color: #f0c419;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.footer-content p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .auth-links {
+        right: 10px; /* Remove left margin for mobile */
+        flex-direction: column;
+        width: 100%; /* Full width for mobile */
+        justify-content: flex-end; /* Align items to the right */
+        padding-right: 15px; /* Add padding to the right for spacing */
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .dropdown-menu {
+        position: static;
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 15px;
+    }
+
+    .logo img {
+        width: 120px; /* Smaller logo on smaller screens */
+    }
+
+    .auth-links {
+        right: 10px; /* Remove left margin for mobile */
+        width: 100%; /* Full width for mobile */
+        justify-content: flex-end; /* Align items to the right */
+        padding-right: 15px; /* Add padding to the right for spacing */
+    }
+
+    .auth-links a {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+
+    .nav-links {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 15px;
+    }
+
+    .auth-links {
+        right: -100px;/* Remove left margin for mobile */
+        position: absolute;
+        margin-top: 10px;
+        width: calc(100% - 100px); /* Adjust width to fit within the screen */
+        justify-content: flex-end; /* Align items to the right */
+        padding-right: 15px; /* Add padding to the right for spacing */
+    }
+
+    .menu-icon {
+        position: absolute;
+        margin-top: 10px;
+        font-size: 1.5rem;
+    }
+
+    .logo img {
+        width: 100px; /* Even smaller logo on very small screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+text{
+  font-family:Helvetica, Arial, sans-serif;
+  font-size:11px;
+  pointer-events:none;
+}
+#chart{
+  position:absolute;
+  width:500px;
+  height:500px;
+  top:-50;
+  left:70;
+}
+#question{
+  position: absolute;
+  width:400px;
+  height:500px;
+  top:0;
+  left:520px;
+}
+#question h1{
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top:50%;
+  -webkit-transform:translate(0,-50%);
+          transform:translate(0,-50%);
+}

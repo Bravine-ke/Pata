@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Referral Program - PataPesa{% endblock %}
+
+{% block meta_description %}Join the PataPesa referral program and earn rewards by referring friends. Find out how it works and start referring!{% endblock %}
+
+{% block content %}
+<section class="referral-program-section">
+  <div class="container">
+    <h1>Referral Program</h1>
+    <p>Invite your friends to join PataPesa and earn rewards through our referral program. Learn more and start referring today!</p>
+    <a href="/referral-details" class="btn-action">Learn More</a>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Referral Program page */
+  .referral-program-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .btn-action {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn-action:hover {
+    background-color: #0056b3;
+  }
+</style>
+{% endblock %}

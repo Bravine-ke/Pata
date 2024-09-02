@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard - PataPesa
+{% endblock %}
+
+{% block meta_description %}
+Access all the ways to earn money, manage your payment gateways, and update your profile on PataPesa.
+{% endblock %}
+
+{% block content %}
+<section class="dashboard-section" style="background-color: #111; color: #fff;">
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar Menu -->
+            <div class="col-md-3">
+                <div class="sidebar-menu">
+                    <h4>Dashboard Menu</h4>
+                    <ul>
+                        <li><a href="#ways-to-earn"><i class="fas fa-coins"></i> Ways to Earn</a></li>
+                        <li><a href="#payment-gateways"><i class="fas fa-wallet"></i> Payment Gateways</a></li>
+                        <li><a href="#withdrawal-gates"><i class="fas fa-money-check-alt"></i> Withdrawal Gates</a></li>
+                        <li><a href="#profile-settings"><i class="fas fa-user-cog"></i> Profile Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Dashboard Content -->
+            <div class="col-md-9">
+                <div class="dashboard-content">
+                    <!-- Profile Section -->
+                    <div id="profile-settings" class="profile-section mb-5">
+                        <h3>Welcome, {{ user.name }}</h3>
+                        <p>Email: {{ user.email }}</p>
+                        <div class="profile-photo mb-4">
+                            <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile Photo" class="rounded-circle">
+                            <button class="btn btn-primary mt-3">Change Profile Photo</button>
+                        </div>
+                    </div>
+
+                    <!-- Ways to Earn -->
+                    <div id="ways-to-earn" class="earn-section mb-5">
+                        <h3>Ways to Make Money</h3>
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Spin the Wheel</h4>
+                                    <p>Try your luck and spin the wheel to win exciting rewards.</p>
+                                    <a href="/spin-the-wheel" class="btn btn-secondary">Start Spinning</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Trivia Quiz</h4>
+                                    <p>Test your knowledge and earn money by answering trivia questions.</p>
+                                    <a href="/trivia" class="btn btn-secondary">Play Trivia</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Complete Surveys</h4>
+                                    <p>Participate in surveys and get paid for your opinions.</p>
+                                    <a href="/surveys" class="btn btn-secondary">Start Surveys</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Daily Rewards</h4>
+                                    <p>Claim daily rewards just for logging in every day.</p>
+                                    <a href="/daily-rewards" class="btn btn-secondary">Claim Rewards</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Scratch Cards</h4>
+                                    <p>Scratch and win instant prizes.</p>
+                                    <a href="/scratch-cards" class="btn btn-secondary">Start Scratching</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="earn-card">
+                                    <h4>Mini Games</h4>
+                                    <p>Play fun mini-games and earn rewards.</p>
+                                    <a href="/mini-games" class="btn btn-secondary">Play Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Gateways -->
+                    <div id="payment-gateways" class="payment-section mb-5">
+                        <h3>Payment Gateways</h3>
+                        <p>Select your preferred payment methods for receiving payments:</p>
+                        <ul>
+                            <li><i class="fas fa-credit-card"></i> Credit/Debit Card</li>
+                            <li><i class="fas fa-paypal"></i> PayPal</li>
+                            <li><i class="fas fa-university"></i> Bank Transfer</li>
+                            <li><i class="fas fa-mobile-alt"></i> M-Pesa</li>
+                        </ul>
+                    </div>
+
+                    <!-- Withdrawal Gates -->
+                    <div id="withdrawal-gates" class="withdrawal-section mb-5">
+                        <h3>Withdrawal Gates</h3>
+                        <p>Withdraw your earnings through the following methods:</p>
+                        <ul>
+                            <li><i class="fas fa-money-bill-wave"></i> Bank Transfer</li>
+                            <li><i class="fas fa-mobile-alt"></i> M-Pesa</li>
+                            <li><i class="fas fa-paypal"></i> PayPal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

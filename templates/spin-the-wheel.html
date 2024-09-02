@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}Spin the Wheel - PataPesa{% endblock %}
+
+{% block meta_description %}Try your luck and spin the wheel to win exciting rewards on PataPesa!{% endblock %}
+
+{% block content %}
+<section class="spin-the-wheel-section">
+  <div class="container">
+    <h1>Spin the Wheel</h1>
+    <p>Try your luck and spin the wheel to win amazing rewards! Each spin gives you a chance to earn something special.</p>
+    <div class="wheel-container">
+      <!-- Spin the Wheel Implementation -->
+      <div id="chart"></div>
+      <div id="question"></div>
+
+      <div id="wheel" class="wheel">
+        <!-- Wheel graphic goes here -->
+        
+        <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+        
+      </div>
+      <button id="spin-button" class="btn-spin">Spin the Wheel</button>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Spin the Wheel page */
+  .spin-the-wheel-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .wheel-container {
+    margin-top: 1rem;
+  }
+  .wheel {
+    background-image: url('{{ url_for('static', filename='images/wheel.png') }}');
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+  }
+  .btn-spin {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-spin:hover {
+    background-color: #218838;
+  }
+</style>
+{% endblock %}

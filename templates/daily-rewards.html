@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Daily Rewards - PataPesa{% endblock %}
+
+{% block meta_description %}Claim your daily rewards and check out the latest offers on PataPesa. Don’t miss out on daily bonuses and incentives!{% endblock %}
+
+{% block content %}
+<section class="daily-rewards-section">
+  <div class="container">
+    <h1>Daily Rewards</h1>
+    <p>Log in daily to claim your rewards and check out the latest offers. Keep coming back to maximize your earnings!</p>
+    <!-- Sample rewards content -->
+    <div class="rewards-list">
+      {% for reward in rewards %}
+      <div class="reward-item">
+        <h3>{{ reward.title }}</h3>
+        <p>{{ reward.description }}</p>
+        <button class="claim-button" data-reward-id="{{ reward.id }}">Claim Reward</button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  /* Custom styles for the Daily Rewards page */
+  .daily-rewards-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  .rewards-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .reward-item {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 1rem;
+    padding: 1rem;
+    width: 300px;
+  }
+  .claim-button {
+    background: #28a745;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .claim-button:hover {
+    background: #218838;
+  }
+</style>
+{% endblock %}

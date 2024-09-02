@@ -1,0 +1,11 @@
+# Exported from Render on 2024-09-02T22:42:49Z
+services:
+- type: web
+  name: PataPesa
+  runtime: python
+  repo: https://github.com/Bravine-ke/PataPesa
+  plan: free
+  region: oregon
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn main:app
+version: "1"
