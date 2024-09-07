@@ -1,105 +1,28 @@
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}PataPesa - Make Money Online{% endblock %}</title>
+// Correct way to use color scale in D3 v7
+var color = d3.scaleOrdinal(d3.schemeCategory20);
 
-  <!-- Meta Tags for SEO -->
-  <meta name="description" content="{% block meta_description %}Earn money online with PataPesa through fun activities like spinning the wheel, trivia quizzes, surveys, and more!{% endblock %}">
-  <meta name="keywords" content="make money, online earning, spin the wheel, trivia quiz, surveys, rewards">
-  <meta name="author" content="PataPesa">
+// Example usage
+var svg = d3.select('#chart')
+    .append("svg")
+    .attr("width", w + padding.left + padding.right)
+    .attr("height", h + padding.top + padding.bottom);
 
-  <!-- Favicon -->
-  <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+var container = svg.append("g")
+    .attr("class", "chartholder")
+    .attr("transform", "translate(" + (w/2 + padding.left) + "," + (h/2 + padding.top) + ")");
 
-  <!-- CSS Links -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+var vis = container.append("g");
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+var pie = d3.pie().sort(null).value(function(d) { return 1; });
+var arc = d3.arc().outerRadius(r);
+var arcs = vis.selectAll("g.slice")
+    .data(pie(data))
+    .enter()
+    .append("g")
+    .attr("class", "slice");
 
-  {% block extra_css %}
-  <!-- Additional CSS can be included here -->
-  {% endblock %}
-</head>
-<body class="background-image" style="background-image: url('{{ url_for('static', filename='images/my1-bg.jpg') }}')">
-  <header>
-    <nav>
-      <div class="menu">
-        <div class="logo">
-          <img src="{{ url_for('static', filename='images/logo.png') }}" alt="PataPesa Logo">
-        </div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </label>
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li class="dropdown">
-            <a href="#">Earn <i class="fas fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="/spin-the-wheel">Spin the Wheel</a></li>
-              <li><a href="/trivia">Trivia Quiz</a></li>
-              <li><a href="/surveys">Complete Surveys</a></li>
-              <li><a href="/daily-rewards">Daily Rewards</a></li>
-              <li><a href="/scratch-cards">Scratch Cards</a></li>
-              <li><a href="/mini-games">Mini Games</a></li>
-            </ul>
-          </li>
-          <li><a href="/leaderboard">Leaderboard</a></li>
-          <li><a href="/referral-program">Referral Program</a></li>
-          <li><a href="/profile">Profile</a></li>
-          <li class="dropdown">
-            <a href="#">More <i class="fas fa-caret-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a href="/help">Help</a></li>
-              <li><a href="/contact">Contact Us</a></li>
-              <li><a href="/faq">FAQ</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="auth-links">
-          <a href="/login" class="btn-login">Login</a>
-          <a href="/signup" class="btn-signup">Sign Up</a>
-        </div>
-      </div>
-    </nav>
-  </header>
+arcs.append("path")
+    .attr("fill", function(d, i) { return color(i); })
+    .attr("d", arc);
 
-  <!-- Main Content Block -->
-  <main>
-    {% block content %}
-    <!-- Page-specific content will be injected here -->
-    {% endblock %}
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-content text-center">
-        <ul>
-          <li><a href="/contact">Contact Us</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/terms">Terms of Service</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
-        </ul>
-        <p>&copy; 2024 PataPesa. All Rights Reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript Files -->
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-
-  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/popper.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-
-  {% block extra_js %}
-  <!-- Additional JavaScript can be included here -->
-  {% endblock %}
-</body>
-</html>
+// Add text, etc.
